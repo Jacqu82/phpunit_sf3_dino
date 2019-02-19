@@ -26,16 +26,16 @@ class DinosaurFactoryTest extends TestCase
         $this->assertSame(5, $dinosaur->getLength());
     }
 
-    public function testItGrowsATriceratops()
-    {
-        $this->markTestIncomplete('Waiting for confirmation from GenLab');
-    }
+//    public function testItGrowsATriceratops()
+//    {
+//        $this->markTestIncomplete('Waiting for confirmation from GenLab');
+//    }
 
     public function testItGrowsABabyVelociraptor()
     {
-        if (!class_exists('Nanny')) {
-            $this->markTestSkipped('There is nobody to watch the baby!');
-        }
+//        if (!class_exists('Nanny')) {
+//            $this->markTestSkipped('There is nobody to watch the baby!');
+//        }
 
         $dinosaur = $this->factory->growVelociraptor(1);
 
@@ -65,6 +65,26 @@ class DinosaurFactoryTest extends TestCase
             ['large carnivorous dinosaur', true, true],
             ['give me all the cookies!!!', false, false],
             ['large herbivore', true, false],
+        ];
+    }
+
+    /**
+     * @dataProvider getHugeDinosaurSpecTests
+     */
+    public function testItGrowsAHugeDinosaur(string $specification)
+    {
+        $dinosaur = $this->factory->growFromSpecification($specification);
+        $this->assertGreaterThanOrEqual(Dinosaur::HUGE, $dinosaur->getLength());
+    }
+
+    public function getHugeDinosaurSpecTests()
+    {
+        return [
+            ['huge dinosaur'],
+            ['huge dino'],
+            ['huge'],
+            ['OMG'],
+            ['😱'],
         ];
     }
 }
