@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\AppBundle\Security;
+namespace Tests\AppBundle\Service;
 
 use AppBundle\Entity\Dinosaur;
-use AppBundle\Security\DinosaurLengthDeterminator;
+use AppBundle\Service\DinosaurLengthDeterminator;
 use PHPUnit\Framework\TestCase;
 
 class DinosaurLengthDeterminatorTest extends TestCase

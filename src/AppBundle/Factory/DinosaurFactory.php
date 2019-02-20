@@ -3,7 +3,7 @@
 namespace AppBundle\Factory;
 
 use AppBundle\Entity\Dinosaur;
-use AppBundle\Security\DinosaurLengthDeterminator;
+use AppBundle\Service\DinosaurLengthDeterminator;
 
 class DinosaurFactory
 {

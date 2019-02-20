@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Security;
+namespace AppBundle\Service;
 
 use AppBundle\Entity\Dinosaur;
 
