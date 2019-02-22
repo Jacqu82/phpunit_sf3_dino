@@ -15,6 +15,13 @@ class Dinosaur
     const HUGE = 30;
 
     /**
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Enclosure", inversedBy="dinosaurs")
      */
     private $enclosure;

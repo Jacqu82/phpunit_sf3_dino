@@ -16,6 +16,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Enclosure
 {
     /**
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Dinosaur", mappedBy="enclosure", cascade={"persist"})
      */
     private $dinosaurs;
