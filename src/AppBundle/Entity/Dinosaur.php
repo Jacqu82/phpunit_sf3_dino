@@ -79,5 +79,12 @@ class Dinosaur
         );
     }
 
+    public function setEnclosure(Enclosure $enclosure): self
+    {
+        $this->enclosure = $enclosure;
+
+        return $this;
+    }
+
 
 }
